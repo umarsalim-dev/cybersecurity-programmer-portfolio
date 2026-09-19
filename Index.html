@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Umar Salim | Cybersecurity & Programmer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #020812;
+            color: white;
+        }
+
+        /* NAVBAR */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 7%;
+            background: rgba(2, 8, 18, 0.95);
+            border-bottom: 1px solid #12304d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #00aaff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 7%;
+            background:
+                radial-gradient(circle at top, #0b3150, #020812 55%);
+        }
+
+        .hero h4 {
+            color: #00aaff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #00aaff;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #b7c5d3;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 7px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            background: #00aaff;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #0077bb;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #00aaff;
+            color: #00aaff;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 85px 7%;
+        }
+
+        .title {
+            text-align: center;
+            color: #00aaff;
+            font-size: 32px;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            background: #071321;
+            border: 1px solid #12304d;
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #b7c5d3;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: #071321;
+            border: 1px solid #12304d;
+            padding: 28px 15px;
+            text-align: center;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #00aaff;
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .skill h3 {
+            color: #00aaff;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #9eafbf;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .project {
+            background: #071321;
+            border: 1px solid #12304d;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: #00aaff;
+        }
+
+        .project-number {
+            color: #00aaff;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #9eafbf;
+            line-height: 1.7;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: #071321;
+            border: 1px solid #12304d;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .contact-box p {
+            color: #b7c5d3;
+            margin: 15px 0;
+        }
+
+        .contact-box a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050d18;
+            border-top: 1px solid #12304d;
+            color: #8394a5;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">Umar.dev</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div>
+
+            <h4>WELCOME TO MY PORTFOLIO</h4>
+
+            <h1>
+                I'm <span>Umar Salim</span>
+            </h1>
+
+            <p>
+                Cybersecurity Enthusiast & Programmer.
+                I am passionate about technology, programming,
+                cybersecurity and web development.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="title">About Me</h2>
+
+        <div class="about-box">
+
+            <p>
+                Hello! My name is Umar Salim.
+                I am a student and aspiring programmer interested
+                in Cybersecurity, Web Development and Technology.
+                I am continuously learning new skills and building
+                projects to improve my knowledge.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2 class="title">My Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <div class="skill-icon">🌐</div>
+                <h3>HTML</h3>
+                <p>Building website structures.</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🎨</div>
+                <h3>CSS</h3>
+                <p>Designing beautiful websites.</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">⚡</div>
+                <h3>JavaScript</h3>
+                <p>Adding interaction to websites.</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🐍</div>
+                <h3>Python</h3>
+                <p>Learning programming and automation.</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🛡️</div>
+                <h3>Cybersecurity</h3>
+                <p>Learning security and ethical hacking.</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🧠</div>
+                <h3>Problem Solving</h3>
+                <p>Solving programming problems.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2 class="title">My Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <div class="project-number">PROJECT 01</div>
+                <h3>Cybersecurity Portfolio</h3>
+                <p>
+                    A personal portfolio website created to
+                    showcase my programming and cybersecurity journey.
+                </p>
+            </div>
+
+            <div class="project">
+                <div class="project-number">PROJECT 02</div>
+                <h3>Web Development</h3>
+                <p>
+                    Websites created while learning HTML,
+                    CSS and JavaScript.
+                </p>
+            </div>
+
+            <div class="project">
+                <div class="project-number">PROJECT 03</div>
+                <h3>Python Projects</h3>
+                <p>
+                    Small Python projects created for
+                    programming practice.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2 class="title">Contact Me</h2>
+
+        <div class="contact-box">
+
+            <p>
+                📧 Email:
+                <a href="mailto:your-email@example.com">
+                    your-email@example.com
+                </a>
+            </p>
+
+            <p>
+                📱 Phone:
+                Your Phone Number
+            </p>
+
+            <p>
+                💻 GitHub:
+                Your GitHub Username
+            </p>
+
+            <a href="mailto:your-email@example.com" class="btn">
+                Send Me a Message
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Umar Salim | Cybersecurity & Programmer
+        </p>
+
+    </footer>
+
+</body>
+</html>
